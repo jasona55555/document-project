@@ -1757,9 +1757,8 @@ window.$Nav && $Nav.declare('configComplete');
 <p>Something</p>
 
 <ul class="tabs">
-            <li class="tab-link current" data-tab="tab-1">
-            <script language="javascript">
-            $(document).ready(function(){
+<script type="text/javascript">
+$(document).ready(function(){
 
 	$('ul.tabs li').click(function(){
 		var tab_id = $(this).attr('data-tab');
@@ -1769,10 +1768,11 @@ window.$Nav && $Nav.declare('configComplete');
 
 		$(this).addClass('current');
 		$("#"+tab_id).addClass('current');
-	});
+	})
 
-});
-</script>File Submission</li>
+})
+</script>
+            <li class="tab-link current" data-tab="tab-1">File Submission</li>
             <li class="tab-link" data-tab="tab-2">New Assisted Entry</li>
         </ul>
         <div class="container">
