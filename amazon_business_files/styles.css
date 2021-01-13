@@ -84,3 +84,96 @@ form{margin-bottom:14px}form.a-nostyle{margin-bottom:0}form.a-nostyle fieldset{b
 /* ******** */
 .a-hidden,.aok-hidden{display:none!important;visibility:hidden!important}.a-block,.aok-block{display:block;position:relative}.a-inline-block,.aok-inline-block{display:inline-block}.a-offscreen,.aok-offscreen{position:absolute!important;left:0!important;bottom:-1px!important;z-index:-1!important;opacity:0}.a-relative,.aok-relative{position:relative}.a-float-right,.aok-float-right{float:right!important}.a-float-left,.aok-float-left{float:left!important}.a-align-top,.aok-align-top{vertical-align:top!important}.a-align-center,.aok-align-center{vertical-align:middle!important}.a-align-bottom,.aok-align-bottom{vertical-align:bottom!important}.a-align-center-horizontally,.aok-align-center-horizontally{margin-left:auto;margin-right:auto}.a-nowrap,.aok-nowrap{white-space:nowrap}.a-break-word,.aok-break-word{word-break:break-all}.a-clearfix:after,.a-clearfix:before,.aok-clearfix:after,.aok-clearfix:before{display:table;content:"";line-height:0;font-size:0}.a-clearfix:after,.aok-clearfix:after{clear:both}.a-hide-text,.aok-hide-text{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0}.a-pre-line,.aok-pre-line{white-space:pre-line}.a-no-select,.aok-no-select{-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 /* ******** */
+
+/* Tab Styles */
+
+.container
+{
+	margin: 0 auto;
+}
+
+ul.tabs
+{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	position: relative;
+}
+
+ul.tabs:after
+{
+	position: absolute;
+	content: "";
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	border-bottom: 1px solid #ddd;
+}
+
+ul.tabs li
+{
+	margin-bottom: 0;
+}
+
+ul.tabs .tab-link
+{
+	color: #333;
+	display: inline-block;
+	padding: 10px 10px;
+	cursor: pointer;
+	margin-left: -4px;
+	position: relative;
+	z-index: 0;
+}
+
+ul.tabs .current
+{
+	background: #fff;
+	color: #1eb16a;
+	margin-left: 0px;
+	margin-right: 10px;
+	border-top: 1px solid #ddd;
+	border-bottom: 0px solid white;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	z-index: 100;
+}
+
+ul.tabs .tab-link:hover
+{
+	background: #c2c2c2;
+	color: #000;
+	display: inline-block;
+	padding: 10px 10px;
+	cursor: pointer;
+	margin-left: -5px;
+	border: 1px solid transparent;
+}
+
+ul.tabs .current:hover
+{
+	background: #fff;
+	color: #1eb16a;
+	margin-left: 0px;
+	margin-right: 10px;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid transparent;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	z-index: 2;
+}
+
+.tab-content
+{
+	display: none;
+	background: #ededed;
+	padding: 15px;
+	background-color: transparent;
+}
+
+.tab-content.current
+{
+	display: inherit;
+}
+
+/* End Tab Styles */

@@ -1754,6 +1754,114 @@ window.$Nav && $Nav.declare('configComplete');
 <li>Four ice cream</li>
 </ul>
 
+<p>Something</p>
+
+<ul class="tabs">
+            <li class="tab-link current" data-tab="tab-1">
+            <script type="text/javascript">/*<![CDATA[*/$(document).ready(function(){
+          
+          $(document).ready(function(){
+
+	$('ul.tabs li').click(function(){
+		var tab_id = $(this).attr('data-tab');
+
+		$('ul.tabs li').removeClass('current');
+		$('.tab-content').removeClass('current');
+
+		$(this).addClass('current');
+		$("#"+tab_id).addClass('current');
+	})
+
+})</script>File Submission</li>
+            <li class="tab-link" data-tab="tab-2">New Assisted Entry</li>
+        </ul>
+        <div class="container">
+            <div class="tab-content current" id="tab-1">
+                <h2>Getting Started with File Submission Automation</h2>
+                <ul>
+                    <li>Send an email to <a href="mailto:hhs-protect@teletracking.com">hhs-protect@teletracking.com</a> and request setup for File Submission Automation.</li>
+                    <li>In response, TeleTracking will schedule a 30-minute kickoff call with you and your IT resources.  The purpose of the call will be to:<ul><li>Explain the technical setup of the API endpoint (below)</li><li>Identify the facilities to automate submissions for</li><li>Identify the email address (or distribution list) that will be used to receive confirmation emails for received API files</li><li>Provide a test facility to ensure your processes are working before enabling with live facilities</li></ul></li>
+                </ul>
+                <h2>API Endpoint Setup </h2>
+                <p>To leverage the API endpoint, users can either follow along with an example set up in Postman, or use a cURL command:</p>
+                <ul>
+                    <li><a href="#file_submission_postman">Postman Setup</a>
+                    </li>
+                    <li><a href="#file_submission_cURL">cURL Command</a>
+                    </li>
+                </ul>
+                <h3><a name="file_submission_postman"></a>Postman Setup</h3>
+                <ol>
+                    <li>Create a new <b>HTTP Post</b> request using the request URL:<p class="code_block">https://api.hhs.teletracking.com/v1/file/upload/automated-entry</p></li>
+                    <li>
+                        <p>From the <i>Headers</i> tab, set the Key type to <b>Authorization</b> and add your API key as the value. </p>
+                        <p class="note">Your API key will be provided separately. </p>
+                        <p>
+                            <img src="../Resources/Images/file_submission_api_key.png" style="width: 80%;height: 80%;" />
+                        </p>
+                    </li>
+                    <li>
+                        <p>From the Body tab, select the <b>form-data</b> and set your Key type to <b>file</b> using the drop-down box on the right-side of the column. Select and attach the Unified Template containing your health system's data to the request. </p>
+                        <p>
+                            <img src="../Resources/Images/file_submission_attach_file.png" style="width: 70%;height: 70%;" />
+                        </p>
+                    </li>
+                    <li>
+                        <p>Submit the request.</p>
+                    </li>
+                </ol>
+                <h3><a name="file_submission_cURL"></a>cURL Command</h3>
+                <p>Use the code block below to learn the cURL command used to leverage the API endpoint.</p>
+                <div class="code_block">
+                    <p>curl --location --request POST 'https://api.hhs.teletracking.com/v1/file/upload/automated-entry' \
+					</p>
+                    <p>--header 'Authorization: your-key-here' \</p>
+                    <p>--form 'file=@"/Path/To/Your/file.csv"'</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="tab-content" id="tab-2">
+                <h2>Getting Started with New Assisted Entry Automation</h2>
+                <ul>
+                    <li>Partner with your EHR, ERP and/or Staffing Systems vendor to install scripts that will extract data from your systems to populate the Unified Template</li>
+                    <li>Send an email to <a href="mailto:hhs-protect@teletracking.com">hhs-protect@teletracking.com</a> and request setup for New Assisted Entry Automation.</li>
+                    <li>In response, TeleTracking will schedule a 30-minute kickoff call with you and your IT resources.  The purpose of the call will be to:<ul><li>Explain the technical setup of the API endpoint (below)</li><li>Identify the facilities to automate for New Assisted Entry </li><li>Identify the email address (or distribution list) that will be used to receive confirmation emails for received API files</li></ul></li>
+                </ul>
+                <h2>API Endpoint Setup </h2>
+                <p>To leverage the API endpoint, users can either follow along with an example set up in Postman, or use a cURL command:</p>
+                <ul>
+                    <li><a href="#nae_postman">Postman Setup</a>
+                    </li>
+                    <li><a href="#nae_cURL">cURL Command</a>
+                    </li>
+                </ul>
+                <h3><a name="nae_postman"></a>Postman Setup</h3>
+                <ol>
+                    <li>Create a new HTTP Post request using the request URL:<p class="code_block">https://api.hhs.teletracking.com/v1/file/upload/assisted-entry
+			</p></li>
+                    <li>
+                        <p>From the <i>Headers</i> tab, set the Key type to <b>Authorization</b> and add your API key as the value. </p>
+                        <p class="note">Your API key will be provided separately. </p>
+                        <p>
+                            <img src="../Resources/Images/new_assisted_entry_api_key.png" style="width: 80%;height: 80%;" />
+                        </p>
+                    </li>
+                    <li>From the Body tab, select the <b>form-data</b> and set your Key type to <b>file</b> using the drop-down box on the right-side of the column. Select and attach the Unified Template containing your health system's data to the request. <p><img src="../Resources/Images/new_assisted_entry_attach_file.png" style="width: 70%;height: 70%;" /></p></li>
+                    <li>
+                        <p>Submit the request. </p>
+                    </li>
+                </ol>
+                <h3><a name="nae_cURL"></a>cURL Command</h3>
+                <p>Use the code block below to learn the cURL command used to leverage the API endpoint.</p>
+                <div class="code_block">
+                    <p>curl --location --request POST 'https://api.hhs.teletracking.com/v1/file/upload/assisted-entry' \</p>
+                    <p>--header 'Authorization: your-key-here' \</p>
+                    <p>--form 'file=@"/Path/To/Your/File/file.csv"'</p>
+                </div>
+            </div>
+        </div>
+
 <p>
 <span>For more information, visit <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=201613180" target="_blank">Amazon Business Accounts Terms and Conditions</a>.</span>
 </p>
