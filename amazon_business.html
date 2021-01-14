@@ -1758,25 +1758,26 @@ window.$Nav && $Nav.declare('configComplete');
 
 <ul class="tabs">
 
-<script language="JavaScript" type="text/javascript">
-$(document).ready(function(){
 
-	$('ul.tabs li').click(function(){
-		var tab_id = $(this).attr('data-tab');
-
-		$('ul.tabs li').removeClass('current');
-		$('.tab-content').removeClass('current');
-
-		$(this).addClass('current');
-		$("#"+tab_id).addClass('current');
-	})
-
-})
-</script>
             <li class="tab-link current" data-tab="tab-1"> Items Sold by Amazon</li>
             <li class="tab-link" data-tab="tab-2">Items Sold by a Third-Party</li>
         </ul>
         <div class="container">
+        <script language="JavaScript" type="text/javascript">
+        $(document).ready(function(){
+
+        	$('ul.tabs li').click(function(){
+        		var tab_id = $(this).attr('data-tab');
+
+        		$('ul.tabs li').removeClass('current');
+        		$('.tab-content').removeClass('current');
+
+        		$(this).addClass('current');
+        		$("#"+tab_id).addClass('current');
+        	})
+
+        })
+        </script>
             <div class="tab-content current" id="tab-1">
                 <h2>Getting Started with File Submission Automation</h2>
                 <ol>
